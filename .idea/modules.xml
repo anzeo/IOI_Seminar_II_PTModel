@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../CNN_finger_press/.idea/CNN_finger_press.iml" filepath="$PROJECT_DIR$/../CNN_finger_press/.idea/CNN_finger_press.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IOI_Seminar_II_PTModel.iml" filepath="$PROJECT_DIR$/.idea/IOI_Seminar_II_PTModel.iml" />
     </modules>
   </component>
 </project>

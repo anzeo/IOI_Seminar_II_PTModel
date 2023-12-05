@@ -1,6 +1,7 @@
 import copy
 import itertools
 import json
+import os
 
 import numpy as np
 import torch
@@ -8,7 +9,7 @@ from torch import nn
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, DataLoader
 
-from model import HandLandmarkModel
+from model.model import HandLandmarkModel
 from util import pre_process_landmark
 
 # define training hyperparameters
@@ -55,4 +56,6 @@ def train_model(json_data):
         # Print the loss at the end of each epoch
         print(f"Epoch {epoch+1}/{EPOCHS}, Loss: {loss.item()}")
 
-    torch.save(model.state_dict(), "model.pt")
+    if not os.path.exists("out"):
+        os.makedirs("out")
+    torch.save(model.state_dict(), "out/model.pt")

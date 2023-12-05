@@ -4,7 +4,7 @@ import torch
 from util import pre_process_landmark
 
 
-model = torch.load("model.pt")
+model = torch.load("out/model.pt")
 with torch.no_grad():
     model.eval()
     json_data = json.load(open("data/test_data/data.json"))
