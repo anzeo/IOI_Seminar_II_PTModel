@@ -15,10 +15,10 @@ def train_model_request():
 
         train_model(request.get_json())
 
-        if os.path.exists("out/model.pt"):
+        if os.path.exists("out_models/model.pt"):
             convert_pt_model_to_onnx("model")
-            if os.path.exists("out/model.onnx"):
-                return send_file("out/model.onnx", as_attachment=True)
+            if os.path.exists("out_models/model.onnx"):
+                return send_file("out_models/model.onnx", as_attachment=True)
             else:
                 return jsonify({'status': 'error', 'message': "An error occurred while converting the model to onnx"})
         else:

@@ -18,7 +18,7 @@ def pre_process_landmark(landmark):
 
 def convert_pt_model_to_onnx(model_name):
     pytorch_model = HandLandmarkModel(63, 2)
-    pytorch_model.load_state_dict(torch.load("out/" + model_name + ".pt"))
+    pytorch_model.load_state_dict(torch.load("out_models/" + model_name + ".pt"))
     pytorch_model.eval()
     dummy_input = torch.zeros(1, 63)
-    torch.onnx.export(pytorch_model, dummy_input, "out/" + model_name + ".onnx", verbose=True)
+    torch.onnx.export(pytorch_model, dummy_input, "out_models/" + model_name + ".onnx", verbose=True)

@@ -53,6 +53,6 @@ def train_model(json_data):
         # Print the loss at the end of each epoch
         print(f"Epoch {epoch+1}/{EPOCHS}, Loss: {loss.item()}")
 
-    if not os.path.exists("out"):
-        os.makedirs("out")
-    torch.save(model.state_dict(), "out/model.pt")
+    if not os.path.exists("out_models"):
+        os.makedirs("out_models")
+    torch.save(model.state_dict(), "out_models/model.pt")
