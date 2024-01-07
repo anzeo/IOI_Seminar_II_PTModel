@@ -17,7 +17,7 @@ from util import pre_process_landmark
 TEST_DATA = "data/test"
 
 # Change this path to evaluate other models
-TRAINED_MODEL = "trained_models/model.pt"
+TRAINED_MODEL = "trained_models/model_nejc.pt"
 
 model = HandLandmarkModel(63, 2)
 
