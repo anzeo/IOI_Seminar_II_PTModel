@@ -25,8 +25,6 @@ model = HandLandmarkModel(63, 2)
 model.load_state_dict(torch.load(TRAINED_MODEL))
 
 with torch.no_grad():
-    model.eval()
-
     criterion = nn.CrossEntropyLoss()
 
     average_loss_all = 0.0
@@ -52,6 +50,7 @@ with torch.no_grad():
             total_samples = 0
 
             with torch.no_grad():
+                model.eval()
                 for inputs, labels in data_loader:
                     outputs = model(inputs)
 
